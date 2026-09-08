@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout Repo') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/rashmigmr13-eng/Monitoring-setup.git'
+                    url: 'https://github.com/AnilHebballi/Monitoring-setup.git'
             }
         }
 
@@ -60,9 +60,9 @@ pipeline {
     post {
         success {
             echo "✅ Monitoring stack deployed successfully!"
-            echo "Grafana → http://<EC2_PUBLIC_IP>:3000"
-            echo "Prometheus → http://<EC2_PUBLIC_IP>:9090"
-            echo "Node Exporter → http://<EC2_PUBLIC_IP>:9100/metrics"
+            echo "Grafana → http://43.205.215.157:3000"
+            echo "Prometheus → http://43.205.215.157:9090"
+            echo "Node Exporter → http://43.205.215.157:9100/metrics"
         }
         failure {
             echo "❌ Deployment failed. Check Jenkins logs."
